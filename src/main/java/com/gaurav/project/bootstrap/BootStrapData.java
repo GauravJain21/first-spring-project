@@ -50,7 +50,6 @@ public class BootStrapData implements CommandLineRunner {
         noEJB.getAuthors().add(rod);
         noEJB.setPublisher(wiley);
         wiley.getBooks().add(noEJB);
-![](../../../../../../../../../../../../var/folders/f_/2g7d5w_j4dj7_w6wkxj_hlb5s89wxm/T/TemporaryItems/NSIRD_screencaptureui_8Vhicg/Screenshot 2022-02-13 at 1.55.01 PM.png)
 
         authorRepository.save(rod);
         bookRepository.save(noEJB);
