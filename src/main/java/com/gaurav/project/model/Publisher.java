@@ -15,6 +15,8 @@ public class Publisher {
     private String address;
 
     @OneToMany
+    @JoinTable(name = "publisher_book", joinColumns = @JoinColumn(name = "publisher_id"),
+    inverseJoinColumns = @JoinColumn(name = "book_id"))
     private Set<Book> books;
 
     public Publisher() {
@@ -39,6 +41,22 @@ public class Publisher {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Set<Book> getBooks() {
+        return books;
+    }
+
+    public void setBooks(Set<Book> books) {
+        this.books = books;
     }
 
     @Override
