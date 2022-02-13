@@ -29,10 +29,12 @@ public class BootStrapData implements CommandLineRunner {
         Book ddd = new Book("Domain Driven Design", "12345");
         Publisher arihant = new Publisher("Arihant Publisher", "Delhi, India");
 
+        publisherRepository.save(arihant);
+
         eric.getBooks().add(ddd);
         ddd.getAuthors().add(eric);
+        ddd.setPublisher(arihant);
         arihant.getBooks().add(ddd);
-
 
         authorRepository.save(eric);
         bookRepository.save(ddd);
@@ -42,8 +44,11 @@ public class BootStrapData implements CommandLineRunner {
         Book noEJB = new Book("J2EE Developement without EJB", "123456");
         Publisher wiley = new Publisher("Wiley Inc. Pvt Ltd", "Arizon, USA");
 
+        publisherRepository.save(wiley);
+
         rod.getBooks().add(noEJB);
         noEJB.getAuthors().add(rod);
+        noEJB.setPublisher(wiley);
         wiley.getBooks().add(noEJB);
 
 

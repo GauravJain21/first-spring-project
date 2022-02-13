@@ -2,6 +2,7 @@ package com.gaurav.project.model;
 
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -15,9 +16,8 @@ public class Publisher {
     private String address;
 
     @OneToMany
-    @JoinTable(name = "publisher_book", joinColumns = @JoinColumn(name = "publisher_id"),
-    inverseJoinColumns = @JoinColumn(name = "book_id"))
-    private Set<Book> books;
+    @JoinColumn(name = "publisher_id")
+    private Set<Book> books = new HashSet<>();
 
     public Publisher() {
     }
